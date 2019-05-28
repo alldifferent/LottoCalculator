@@ -17,11 +17,13 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
-        
+
     }
 
     @Override
     public void setValues() {
+
+
 
     }
 
