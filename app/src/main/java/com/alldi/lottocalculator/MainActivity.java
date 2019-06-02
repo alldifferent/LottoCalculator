@@ -148,7 +148,7 @@ public class MainActivity extends BaseActivity {
 
         desOrder();
 
-        int[] resultNum = new int[6];
+        int[] resultNum = new int[7];
 
         resultNum[0] = Integer.parseInt(act.resultNum1Txt.getText().toString());
         resultNum[1] = Integer.parseInt(act.resultNum2Txt.getText().toString());
@@ -156,6 +156,7 @@ public class MainActivity extends BaseActivity {
         resultNum[3] = Integer.parseInt(act.resultNum4Txt.getText().toString());
         resultNum[4] = Integer.parseInt(act.resultNum5Txt.getText().toString());
         resultNum[5] = Integer.parseInt(act.resultNum6Txt.getText().toString());
+        resultNum[6] = Integer.parseInt(act.resultNum7Txt.getText().toString());
 
         payMoney = payMoney + 1000;
 
@@ -167,9 +168,9 @@ public class MainActivity extends BaseActivity {
 
         int count = 0;
 
-        for (int i = 0; i < resultNum.length; i++){
+        for (int i = 0; i < desOrderNum.length; i++){
 
-            for (int j = 0; j < resultNum.length; j++){
+            for (int j = 0; j < desOrderNum.length; j++){
 
                 if (resultNum[i] == desOrderNum[j]){
 
@@ -190,8 +191,13 @@ public class MainActivity extends BaseActivity {
             act.rankTxt.setText("4등");
             totcount = totcount + 50000;
         }else if (count == 5){
-            act.rankTxt.setText("3등");
-            thirdCount++;
+            if (resultNum[7] == desOrderNum[0] || resultNum[7] == desOrderNum[1] || resultNum[7] == desOrderNum[2] || resultNum[7] == desOrderNum[3] || resultNum[7] == desOrderNum[4] || resultNum[7] == desOrderNum[5]){
+                act.rankTxt.setText("2등");
+                secondCount++;
+            }else {
+                act.rankTxt.setText("3등");
+                thirdCount++;
+            }
         }else if (count == 6){
             act.rankTxt.setText("1등");
             firstCount++;
