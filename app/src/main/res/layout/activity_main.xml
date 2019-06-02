@@ -14,6 +14,7 @@
             android:text="이번주 정답 번호"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
+            android:textSize="16sp"
             />
 
         <LinearLayout
@@ -22,58 +23,72 @@
             android:orientation="horizontal"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             >
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="2"
+                android:hint="번호"
                 android:id="@+id/resultNum1Txt"
+                android:layout_weight="1"
+                android:inputType="number"
                 />
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
-                android:text="5"
-                android:id="@+id/resultNum2Txt"/>
+                android:hint="번호"
+                android:id="@+id/resultNum2Txt"
+                android:layout_weight="1"
+                android:inputType="number"
+                />
 
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
-                android:text="10"
-                android:id="@+id/resultNum3Txt"/>
+                android:hint="번호"
+                android:id="@+id/resultNum3Txt"
+                android:inputType="number"
+                android:layout_weight="1"/>
 
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
-                android:text="18"
-                android:id="@+id/resultNum4Txt"/>
+                android:hint="번호"
+                android:id="@+id/resultNum4Txt"
+                android:inputType="number"
+                android:layout_weight="1"/>
 
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
-                android:text="30"
-                android:id="@+id/resultNum5Txt"/>
+                android:hint="번호"
+                android:id="@+id/resultNum5Txt"
+                android:inputType="number"
+                android:layout_weight="1"/>
 
-            <TextView
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
-                android:text="42"
-                android:id="@+id/resultNum6Txt"/>
+                android:hint="번호"
+                android:id="@+id/resultNum6Txt"
+                android:inputType="number"
+                android:layout_weight="1"/>
 
 
 
@@ -85,6 +100,7 @@
             android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:text="구매 할때마다 랜덤 생성되는 6개 숫자"/>
 
         <LinearLayout
@@ -101,6 +117,8 @@
                 android:textSize="25sp"
                 android:text="2"
                 android:id="@+id/number1Txt"
+                android:layout_weight="1"
+                android:gravity="center"
                 />
 
             <TextView
@@ -110,6 +128,8 @@
                 android:layout_marginLeft="10dp"
                 android:text="5"
                 android:id="@+id/number2Txt"
+                android:layout_weight="1"
+                android:gravity="center"
                 />
 
 
@@ -119,7 +139,9 @@
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
                 android:text="10"
-                android:id="@+id/number3Txt"/>
+                android:id="@+id/number3Txt"
+                android:gravity="center"
+                android:layout_weight="1"/>
 
 
             <TextView
@@ -128,7 +150,9 @@
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
                 android:text="18"
-                android:id="@+id/number4Txt"/>
+                android:id="@+id/number4Txt"
+                android:gravity="center"
+                android:layout_weight="1"/>
 
 
             <TextView
@@ -137,7 +161,9 @@
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
                 android:text="30"
-                android:id="@+id/number5Txt"/>
+                android:id="@+id/number5Txt"
+                android:gravity="center"
+                android:layout_weight="1"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -145,7 +171,9 @@
                 android:textSize="25sp"
                 android:layout_marginLeft="10dp"
                 android:text="42"
-                android:id="@+id/number6Txt"/>
+                android:id="@+id/number6Txt"
+                android:gravity="center"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
@@ -175,6 +203,17 @@
             android:text="누적 당첨금액 : ??원"
             android:layout_marginTop="10dp"
             android:id="@+id/makeMoneyTxt"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="당첨등수"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:id="@+id/rankTxt"
+            android:textColor="#000000"
             />
 
     </LinearLayout>
