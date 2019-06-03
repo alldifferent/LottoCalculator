@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.alldi.lottocalculator.databinding.ActivityMainBinding;
 
+import java.math.BigInteger;
 import java.util.Random;
 
 public class MainActivity extends BaseActivity {
@@ -18,11 +19,13 @@ public class MainActivity extends BaseActivity {
     int[] tempNum = new int[6];
     int[] newNum = new int[6];
     int[] desOrderNum = new int[6];
-    int totcount = 0;
-    int firstCount = 0;
-    int thirdCount = 0;
-    int secondCount = 0;
-    int payMoney = 0;
+    BigInteger totcount = new BigInteger("0");
+    BigInteger firstCount = new BigInteger("0");
+    BigInteger thirdCount = new BigInteger("0");
+    BigInteger secondCount = new BigInteger("0");
+    BigInteger forthCount = new BigInteger("0");
+    BigInteger fifthCount = new BigInteger("0");
+    BigInteger payMoney = new BigInteger("0");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +43,10 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
 
-                checkRank();
-//                for (int i = 0; i < desOrderNum.length; i++){
-//                    Log.d("숫자", desOrderNum[i]+"");
+
+//                for(int i = 0; i < 10000; i++){
+
+                    checkRank();
 //                }
 
             }
@@ -158,7 +162,8 @@ public class MainActivity extends BaseActivity {
         resultNum[5] = Integer.parseInt(act.resultNum6Txt.getText().toString());
         resultNum[6] = Integer.parseInt(act.resultNum7Txt.getText().toString());
 
-        payMoney = payMoney + 1000;
+        BigInteger price = new BigInteger("1000");
+        payMoney = payMoney.add(price);
 
         act.payTxt.setText(String.format("%,4d원", payMoney));
 
@@ -182,28 +187,42 @@ public class MainActivity extends BaseActivity {
 
         }
 
+        BigInteger fifthReward = new BigInteger("5000");
+        BigInteger forthReward = new BigInteger("50000");
+        BigInteger firstReward = new BigInteger("4800000000");
+        BigInteger secondReward = new BigInteger("50000000");
+        BigInteger thirdReward = new BigInteger("1400000");
+        BigInteger countAdd = new BigInteger("1");
+
         if (count < 3){
             act.rankTxt.setText("꽝");
         }else if (count == 3){
             act.rankTxt.setText("5등");
-            totcount = totcount + 5000;
+            totcount = totcount.add(fifthReward);
+            fifthCount = fifthCount.add(countAdd);
         }else if (count == 4){
             act.rankTxt.setText("4등");
-            totcount = totcount + 50000;
+            totcount = totcount.add(forthReward);
+            forthCount = forthCount.add(countAdd);
         }else if (count == 5){
-            if (resultNum[7] == desOrderNum[0] || resultNum[7] == desOrderNum[1] || resultNum[7] == desOrderNum[2] || resultNum[7] == desOrderNum[3] || resultNum[7] == desOrderNum[4] || resultNum[7] == desOrderNum[5]){
+            if (resultNum[6] == desOrderNum[0] || resultNum[6] == desOrderNum[1] || resultNum[6] == desOrderNum[2] || resultNum[6] == desOrderNum[3] || resultNum[6] == desOrderNum[4] || resultNum[6] == desOrderNum[5]){
                 act.rankTxt.setText("2등");
-                secondCount++;
+                secondCount = secondCount.add(countAdd);
+                totcount = totcount.add(secondReward);
             }else {
                 act.rankTxt.setText("3등");
-                thirdCount++;
+                totcount = totcount.add(thirdReward);
+                thirdCount = thirdCount.add(countAdd);
             }
         }else if (count == 6){
             act.rankTxt.setText("1등");
-            firstCount++;
+            totcount = totcount.add(firstReward);
+            firstCount = firstCount.add(countAdd);
         }
 
-        act.makeMoneyTxt.setText(String.format("총 %,4d원, 1등 %d회 , 2등 %d회, 3등 %d회", totcount, firstCount, secondCount, thirdCount));
+        act.makeMoneyTxt.setText(String.format("1등 %d회 , 2등 %d회, 3등 %d회, 4등 %d회, 5등 %d회", firstCount, secondCount, thirdCount, forthCount, fifthCount));
+        act.countTxt.setText(String.format("총 %,4d원", totcount));
+
 
     }
 

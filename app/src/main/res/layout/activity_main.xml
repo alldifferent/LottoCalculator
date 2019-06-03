@@ -204,6 +204,7 @@
             android:textSize="18sp"
             android:layout_marginTop="50dp"
             android:id="@+id/payTxt"
+            android:layout_marginLeft="10dp"
             />
 
         <TextView
@@ -213,6 +214,17 @@
             android:text="누적 당첨금액 : ??원"
             android:layout_marginTop="10dp"
             android:id="@+id/makeMoneyTxt"
+            android:layout_marginLeft="10dp"
+            />
+
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="몇회"
+            android:layout_marginTop="10dp"
+            android:id="@+id/countTxt"
+            android:layout_marginLeft="10dp"
             />
 
         <TextView
