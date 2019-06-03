@@ -165,7 +165,7 @@ public class MainActivity extends BaseActivity {
         BigInteger price = new BigInteger("1000");
         payMoney = payMoney.add(price);
 
-        act.payTxt.setText(String.format("%,4d원", payMoney));
+        act.payTxt.setText(String.format("사용금액: %,4d원", payMoney));
 
         for (int i = 0; i < desOrderNum.length; i++){
             Log.d("숫자", desOrderNum[i]+"");
@@ -221,7 +221,7 @@ public class MainActivity extends BaseActivity {
         }
 
         act.makeMoneyTxt.setText(String.format("1등 %d회 , 2등 %d회, 3등 %d회, 4등 %d회, 5등 %d회", firstCount, secondCount, thirdCount, forthCount, fifthCount));
-        act.countTxt.setText(String.format("총 %,4d원", totcount));
+        act.countTxt.setText(String.format("누적 당첨금액: 총 %,4d원", totcount));
 
 
     }
